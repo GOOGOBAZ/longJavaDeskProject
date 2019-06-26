@@ -1,0 +1,1 @@
+Navigation Guide;Email Module;Sms Management;Ledger Reconcilliantion;Loan Application;Amortization Calculator;Loan management Module;Loan authorisation Module;Reports Module;Operations Module;Log Out;

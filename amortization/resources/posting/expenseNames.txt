@@ -1,0 +1,6 @@
+Pay Electricty;Pay Water;Pay Employees Salary;Pay Telphone and Internet;Pay Air Time Allowance;Pay Lunch Allowance;Pay Employees Allowancies;Pay Rent;Pay Taxes;Pay Other Expenses;Pay News Papers and Periodicals;Pay Licenses and Permits;Pay Stationary and Photocopying;Pay Legal Expenses;Pay Bank Charges;Pay Financing Expense;Pay Commission Payable;Pay Transport Expense;Pay Interest Payable;Pay Provision for Bad Debts;Pay Provision for Depreciation;Pay Entertainment and Refreshment;Pay Board Sitting Allowance;Pay Nssf;Pay Payee;
+
+
+
+
+

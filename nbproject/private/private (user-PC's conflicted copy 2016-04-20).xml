@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="32">
+        <file>
+            <url>src/googo/pmms/project2/PostingMain.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>320</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/googo/pmms/project2/NewLoanApplication.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>5451</line>
+                <key/>
+            </bookmark>
+            <bookmark id="3">
+                <name/>
+                <line>8132</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/googo/pmms/project2/DatabaseQuaries.java</url>
+            <bookmark id="4">
+                <name/>
+                <line>3469</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/googo/pmms/project2/frames/NewLoanApplication.java</url>
+            <bookmark id="24">
+                <name/>
+                <line>1733</line>
+                <key/>
+            </bookmark>
+            <bookmark id="21">
+                <name/>
+                <line>4747</line>
+                <key/>
+            </bookmark>
+            <bookmark id="22">
+                <name/>
+                <line>8271</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/googo/pmms/project2/accountsHelper/PostingMain.java</url>
+            <bookmark id="29">
+                <name/>
+                <line>135</line>
+                <key/>
+            </bookmark>
+            <bookmark id="28">
+                <name/>
+                <line>745</line>
+                <key/>
+            </bookmark>
+            <bookmark id="30">
+                <name/>
+                <line>923</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/googo/pmms/project2/databases/loanDatabaseQuaries.java</url>
+            <bookmark id="12">
+                <name/>
+                <line>937</line>
+                <key/>
+            </bookmark>
+            <bookmark id="11">
+                <name/>
+                <line>1236</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/googo/pmms/project2/databases/DatabaseQuaries.java</url>
+            <bookmark id="32">
+                <name/>
+                <line>3468</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/googo/pmms/project2/loanDatabaseQuaries.java</url>
+            <bookmark id="10">
+                <name/>
+                <line>804</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/user/Dropbox/PMMS_2/src/googo/pmms/project2/frames/loanManagementSetup.java</file>
+            <file>file:/C:/Users/user/Dropbox/PMMS_2/src/googo/pmms/project2/frames/NewLoanApplication.java</file>
+            <file>file:/C:/Users/user/Dropbox/PMMS_2/src/googo/pmms/project2/accountsHelper/updateLoans.java</file>
+            <file>file:/C:/Users/user/Dropbox/PMMS_2/src/googo/pmms/project2/frames/OperationsModule.java</file>
+        </group>
+    </open-files>
+</project-private>

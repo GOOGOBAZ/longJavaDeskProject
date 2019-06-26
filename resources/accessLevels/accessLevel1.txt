@@ -1,0 +1,1 @@
+Loan authorisation Module;Loan management Module;Loan Application;Posting Module;Operations Module;Reports Module;Amortization Calculator;Loan Calculator;Email Module;Ledger Reconcilliantion;Sms Management;Loan SetUp;Manage System;Manage Users
