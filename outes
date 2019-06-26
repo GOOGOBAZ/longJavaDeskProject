@@ -1,0 +1,757 @@
+-- MySQL dump 10.13  Distrib 5.5.48, for Win64 (x86)
+--
+-- Host: localhost    Database: pmms_loans
+-- ------------------------------------------------------
+-- Server version	5.5.48
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `accumulatedinterestrecoverstore`
+--
+
+DROP TABLE IF EXISTS `accumulatedinterestrecoverstore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `accumulatedinterestrecoverstore` (
+  `TrnId` int(11) NOT NULL AUTO_INCREMENT,
+  `TrnDate` date NOT NULL DEFAULT '1970-01-01',
+  `InstalmentNumber` varchar(45) DEFAULT '0',
+  `AccountNumber` varchar(45) DEFAULT '055020000010',
+  `RecoverStartDate` date NOT NULL DEFAULT '1970-01-01',
+  `RecoverNextDueDate` date NOT NULL DEFAULT '1970-01-01',
+  `RecoverEndDate` date NOT NULL DEFAULT '1970-01-01',
+  `RecoverNumberInstalments` varchar(45) DEFAULT '0',
+  `RecoverRemainingInstalments` varchar(45) DEFAULT '0',
+  `RecoveredNumberInstalments` varchar(45) DEFAULT '0',
+  `InstalmentNextDueDate` date NOT NULL DEFAULT '1970-01-01',
+  `TotalAccumulatedInterest` varchar(45) DEFAULT '0.0',
+  `AccumulatedInterestRemaining` varchar(45) DEFAULT '0.0',
+  `AccumulatedInterestRecovered` varchar(45) DEFAULT '0.0',
+  `RecoveryInstalmentSize` varchar(45) DEFAULT '0.0',
+  `RecoveryMethod` varchar(45) DEFAULT 'Other',
+  `RecoverStatus1` varchar(45) DEFAULT 'NCO',
+  `RecoverStatus2` varchar(45) DEFAULT 'NCO',
+  `RecoverStatus3` varchar(45) DEFAULT 'NCO',
+  `OtherThree` varchar(45) DEFAULT 'NCO',
+  `OtherFour` varchar(45) DEFAULT 'NCO',
+  `OtherFive` varchar(45) DEFAULT 'NCO',
+  PRIMARY KEY (`TrnId`),
+  UNIQUE KEY `TrnId_UNIQUE` (`TrnId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `accumulatedinterestrecoverstore`
+--
+
+LOCK TABLES `accumulatedinterestrecoverstore` WRITE;
+/*!40000 ALTER TABLE `accumulatedinterestrecoverstore` DISABLE KEYS */;
+/*!40000 ALTER TABLE `accumulatedinterestrecoverstore` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dailycollection`
+--
+
+DROP TABLE IF EXISTS `dailycollection`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dailycollection` (
+  `CollectionId` int(11) NOT NULL AUTO_INCREMENT,
+  `CollectionDate` date NOT NULL DEFAULT '1970-01-01',
+  `accountName` varchar(100) DEFAULT '0',
+  `loanID` varchar(100) DEFAULT '0',
+  `ExpectedPrincipalArrears` varchar(100) DEFAULT '0',
+  `ExpectedPrincipalToday` varchar(100) DEFAULT '0',
+  `ExpectedTotalPrincimpalToday` varchar(100) DEFAULT '0',
+  `PrincimpalCollectedToday` varchar(100) DEFAULT '0',
+  `ExpectedInterestArrears` varchar(100) DEFAULT '0',
+  `ExpectedInterestToday` varchar(100) DEFAULT '0',
+  `ExpectedTotalInterestToday` varchar(100) DEFAULT '0',
+  `InterestCollectedToday` varchar(100) DEFAULT '0',
+  `ExpectedAccumInterestArrears` varchar(100) DEFAULT '0',
+  `ExpectedAccumInterestToday` varchar(100) DEFAULT '0',
+  `ExpectedTotalIAccumnterestToday` varchar(100) DEFAULT '0',
+  `AccumInterestCollectedToday` varchar(100) DEFAULT '0',
+  `ExpectedPenaltyArrears` varchar(100) DEFAULT '0',
+  `ExpectedPenaltyToday` varchar(100) DEFAULT '0',
+  `ExpectedTotalIPenaltyToday` varchar(100) DEFAULT '0',
+  `PenaltyCollectedToday` varchar(100) DEFAULT '0',
+  `ExpectedAmountInArrears` varchar(100) DEFAULT '0',
+  `ExpectedAmountToday` varchar(100) DEFAULT '0',
+  `ExpectedTotalAmountToday` varchar(100) DEFAULT '0',
+  `AmountCollectedToday` varchar(100) DEFAULT '0',
+  `NumberOfInstalmentsInArrears` varchar(100) DEFAULT '0',
+  `VarianceCollection` varchar(100) DEFAULT '0',
+  `OtherThree` varchar(45) DEFAULT 'NCO',
+  `OtherFour` varchar(45) DEFAULT 'NCO',
+  `OtherFive` varchar(45) DEFAULT 'NCO',
+  PRIMARY KEY (`CollectionId`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dailycollection`
+--
+
+LOCK TABLES `dailycollection` WRITE;
+/*!40000 ALTER TABLE `dailycollection` DISABLE KEYS */;
+INSERT INTO `dailycollection` VALUES (1,'2019-06-07','Direct Cash Transactions','newloan01123000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(2,'2019-06-07','Direct Bank Transactions','newloan01122000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(3,'2019-06-07','BAZIRAKE AUGUSTINE','newloan05502000110','80000000','0.0','80000000','78000000','12000000','0.0','12000000','16000000','0','0.0','0','0.0','0','0.0','0','0.0','92000000','0.0','92000000','94000000','1','0','NA','NA','NA'),(4,'2019-06-07','BAZIRAKE AUGUSTINE','newloan05502000110','2000000','0.0','2000000','2000000','300000','0.0','300000','370000','0','0.0','0','0.0','0','0.0','0','0.0','2300000','0.0','2300000','2370000','1','0','NA','NA','NA'),(5,'2019-06-07','BAZIRAKE AUGUSTINE','newloan05502000110','3000000','0.0','3000000','3000000','450000','0.0','450000','285000','0','0.0','0','0.0','0','0.0','0','0.0','3450000','0.0','3450000','3285000','1','0','NA','NA','NA'),(6,'2019-06-07','BAZIRAKE AUGUSTINE','newloan05502000110','5000000','0.0','5000000','5000000','750000','0.0','750000','750000','0','0.0','0','0.0','0','0.0','0','0.0','5750000','0.0','5750000','5750000','1','0','NA','NA','NA'),(7,'2019-06-07','BAZIRAKE AUGUSTINE','newloan05502000110','6000000','0.0','6000000','6000000','900000','0.0','900000','900000','0','0.0','0','0.0','0','0.0','0','0.0','6900000','0.0','6900000','6900000','1','0','NA','NA','NA'),(8,'2019-06-07','BAZIRAKE AUGUSTINE','newloan05502000110','6900000','0.0','6900000','6900000','1035000','0.0','1035000','1035000','0','0.0','0','0.0','0','0.0','0','0.0','7935000','0.0','7935000','7935000','1','0','NA','NA','NA'),(9,'2019-06-07','BAZIRAKE AUGUSTINE','newloan05502000110','7000000','0.0','7000000','0.0','1050000','0.0','1050000','0.0','0','0.0','0','0.0','0','0.0','0','0.0','8050000','0.0','8050000','0.0','1','0','NA','NA','NA'),(10,'2019-06-09','BAZIRAKE AUGUSTINE','newloan05502000110','7000000','0.0','7000000','7000000','1050000','0.0','1050000','2100000','0','0.0','0','0.0','0','0.0','0','0.0','8050000','0.0','8050000','9100000','1','0','NA','NA','NA'),(11,'2019-06-09','Direct Cash Transactions','newloan01123000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(12,'2019-06-09','Direct Bank Transactions','newloan01122000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(13,'2019-06-09','BAZIRAKE AUGUSTINE','newloan05502000110','10000000','0.0','10000000','10000000','1500000','0.0','1500000','3000000','0','0.0','0','0.0','0','0.0','0','0.0','11500000','0.0','11500000','13000000','1','0','NA','NA','NA'),(14,'2019-06-09','LUYOMBYA WYCLIF','newloan05502000210','0.0','0.0','0.0','7000000','0.0','0.0','0.0','2100000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','9100000','0','0','NA','NA','NA'),(15,'2019-06-09','BAZIRAKE AUGUSTINE','newloan05502000110','0.0','0.0','0.0','3000000','0.0','0.0','0.0','1950000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','4950000','0','0','NA','NA','NA'),(16,'2019-06-09','BAZIRAKE AUGUSTINE','newloan05502000110','10000000','0.0','10000000','0.0','1500000','0.0','1500000','0.0','0','0.0','0','0.0','0','0.0','0','0.0','11500000','0.0','11500000','0.0','1','0','NA','NA','NA'),(17,'2019-06-10','BAZIRAKE AUGUSTINE','newloan05502000110','10000000','0.0','10000000','0.0','3000000','0.0','3000000','0.0','0','0.0','0','0.0','0','0.0','0','0.0','13000000','0.0','13000000','0.0','1','0','NA','NA','NA'),(18,'2019-06-10','Direct Cash Transactions','newloan01123000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(19,'2019-06-10','Direct Bank Transactions','newloan01122000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(20,'2019-06-10','LUYOMBYA WYCLIF','newloan05502000210','9000000','0.0','9000000','9000000','1350000','0.0','1350000','2700000','0','0.0','0','0.0','0','0.0','0','0.0','10350000','0.0','10350000','11700000','1','0','NA','NA','NA'),(21,'2019-06-10','BAZIRAKE AUGUSTINE','newloan05502000110','20000000','0.0','20000000','10000000','3000000','0.0','3000000','6000000','0','0.0','0','0.0','0','0.0','0','0.0','23000000','0.0','23000000','16000000','1','0','NA','NA','NA'),(22,'2019-06-10','BAZIRAKE AUGUSTINE','newloan05502000110','10000000','0.0','10000000','10000000','1500000','0.0','1500000','1500000','0','0.0','0','0.0','0','0.0','0','0.0','11500000','0.0','11500000','11500000','1','0','NA','NA','NA'),(23,'2019-06-10','BAZIRAKE AUGUSTINE','newloan05502000110','10000000','0.0','10000000','10000000','1500000','0.0','1500000','1500000','0','0.0','0','0.0','0','0.0','0','0.0','11500000','0.0','11500000','11500000','1','0','NA','NA','NA'),(24,'2019-06-12','Direct Cash Transactions','newloan01123000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(25,'2019-06-12','Direct Bank Transactions','newloan01122000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(26,'2019-06-12','LUYOMBYA WYCLIF','newloan05502000210','10000000','0.0','10000000','10000000','1500000','0.0','1500000','1500000','0','0.0','0','0.0','0','0.0','0','0.0','11500000','0.0','11500000','11500000','1','0','NA','NA','NA'),(27,'2019-06-12','BAZIRAKE AUGUSTINE','newloan05502000110','0.0','0.0','0.0','11500000','0.0','0.0','0.0','1725000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','13225000','0','0','NA','NA','NA'),(28,'2019-06-12','LUYOMBYA WYCLIF','newloan05502000210','11500000','0.0','11500000','11500000','1725000','0.0','1725000','1725000','0','0.0','0','0.0','0','0.0','0','0.0','13225000','0.0','13225000','13225000','1','0','NA','NA','NA'),(29,'2019-06-12','BAZIRAKE AUGUSTINE','newloan05502000110','0.0','0.0','0.0','3225000','0.0','0.0','0.0','1983750','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','5208750','0','0','NA','NA','NA'),(30,'2019-06-12','BAZIRAKE AUGUSTINE','newloan05502000110','10000000','0.0','10000000','10000000','1500000','0.0','1500000','1500000','0','0.0','0','0.0','0','0.0','0','0.0','11500000','0.0','11500000','11500000','1','0','NA','NA','NA'),(31,'2019-06-12','BAZIRAKE AUGUSTINE','newloan05502000110','11000000','0.0','11000000','11000000','1650000','0.0','1650000','650000','0','0.0','0','0.0','0','0.0','0','0.0','12650000','0.0','12650000','11650000','1','0','NA','NA','NA'),(32,'2019-06-12','BAZIRAKE AUGUSTINE','newloan05502000110','11000000','0.0','11000000','700000','1650000','0.0','1650000','1650000','0','0.0','0','0.0','0','0.0','0','0.0','12650000','0.0','12650000','2350000','1','0','NA','NA','NA'),(33,'2019-06-13','BAZIRAKE AUGUSTINE','newloan05502000110','10300000','0.0','10300000','300000','0','0.0','0','0.0','0','0.0','0','0.0','0','0.0','0','0.0','10300000','0.0','10300000','300000','1','0','NA','NA','NA'),(34,'2019-06-13','Direct Cash Transactions','newloan01123000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(35,'2019-06-13','Direct Bank Transactions','newloan01122000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(36,'2019-06-13','BAZIRAKE AUGUSTINE','newloan05502000110','10000000','0.0','10000000','10000000','1500000','0.0','1500000','0.0','0','0.0','0','0.0','0','0.0','0','0.0','11500000','0.0','11500000','10000000','1','0','NA','NA','NA'),(37,'2019-06-13','LUYOMBYA WYCLIF','newloan05502000210','11000000','0.0','11000000','11000000','1650000','0.0','1650000','0.0','0','0.0','0','0.0','0','0.0','0','0.0','12650000','0.0','12650000','11000000','1','0','NA','NA','NA'),(38,'2019-06-13','BAZIRAKE AUGUSTINE','newloan05502000110','10000000','0.0','10000000','0.0','1500000','0.0','1500000','0.0','0','0.0','0','0.0','0','0.0','0','0.0','11500000','0.0','11500000','0.0','1','0','NA','NA','NA'),(39,'2019-06-13','BAZIRAKE AUGUSTINE','newloan05502000110','20000000','0.0','20000000','20000000','3000000','0.0','3000000','39000000','0','0.0','0','0.0','0','0.0','0','0.0','23000000','0.0','23000000','59000000','1','0','NA','NA','NA'),(40,'2019-06-13','BAZIRAKE AUGUSTINE','newloan05502000110','40000000','0.0','40000000','0.0','6000000','0.0','6000000','0.0','0','0.0','0','0.0','0','0.0','0','0.0','46000000','0.0','46000000','0.0','1','0','NA','NA','NA'),(41,'2019-06-14','BAZIRAKE AUGUSTINE','newloan05502000110','40000000','0.0','40000000','0.0','78000000','0.0','78000000','0.0','0','0.0','0','0.0','0','0.0','0','0.0','118000000','0.0','118000000','0.0','1','0','NA','NA','NA'),(42,'2019-06-14','Direct Cash Transactions','newloan01123000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA'),(43,'2019-06-14','Direct Bank Transactions','newloan01122000110','0.0','0,0','0,0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0','NA','NA','NA');
+/*!40000 ALTER TABLE `dailycollection` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `interestcomputed`
+--
+
+DROP TABLE IF EXISTS `interestcomputed`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `interestcomputed` (
+  `TrnId` int(11) NOT NULL AUTO_INCREMENT,
+  `loanId` varchar(45) DEFAULT '0',
+  `DueDate` date NOT NULL DEFAULT '1970-01-01',
+  `PrincimpalInvolved` double DEFAULT NULL,
+  `InterestInvolved` double DEFAULT NULL,
+  `InterestPaidIn` double DEFAULT NULL,
+  `InterestInvoRemaining` double DEFAULT NULL,
+  `totalInterstInv` double DEFAULT NULL,
+  `totalInterstInvPaid` double DEFAULT NULL,
+  `totalInterstInvRemaing` double DEFAULT NULL,
+  `loanStatusI` varchar(45) DEFAULT 'NCO',
+  PRIMARY KEY (`TrnId`),
+  UNIQUE KEY `TrnId_UNIQUE` (`TrnId`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `interestcomputed`
+--
+
+LOCK TABLES `interestcomputed` WRITE;
+/*!40000 ALTER TABLE `interestcomputed` DISABLE KEYS */;
+INSERT INTO `interestcomputed` VALUES (4,'newloan05502000110','2019-04-04',10000000,1500000,1500000,0,1500000,0,1500000,'Paid'),(5,'newloan05502000110','2019-05-04',10000000,1500000,1500000,0,3000000,0,3000000,'Paid'),(6,'newloan05502000110','2019-06-04',10000000,1500000,1500000,0,4500000,0,4500000,'Paid'),(7,'newloan05502000110','2019-07-04',10000000,1500000,1500000,0,6000000,0,6000000,'Paid'),(8,'newloan05502000110','2018-07-12',20000000,3000000,3000000,0,3000000,0,3000000,'Paid'),(9,'newloan05502000110','2018-08-12',20000000,3000000,3000000,0,4500000,0,4500000,'Paid'),(10,'newloan05502000110','2018-09-12',20000000,3000000,3000000,0,7500000,0,7500000,'Paid'),(11,'newloan05502000110','2018-10-12',20000000,3000000,3000000,0,10500000,0,10500000,'Paid'),(12,'newloan05502000110','2018-11-12',20000000,3000000,3000000,0,13500000,0,13500000,'Paid'),(13,'newloan05502000110','2018-12-12',20000000,3000000,3000000,0,16500000,0,16500000,'Paid'),(14,'newloan05502000110','2019-01-12',20000000,3000000,3000000,0,19500000,0,19500000,'Paid'),(15,'newloan05502000110','2019-02-12',20000000,3000000,3000000,0,22500000,0,22500000,'Paid'),(16,'newloan05502000110','2019-03-12',20000000,3000000,3000000,0,25500000,0,25500000,'Paid'),(17,'newloan05502000110','2019-04-12',20000000,3000000,3000000,0,28500000,0,28500000,'Paid'),(18,'newloan05502000110','2019-05-12',20000000,3000000,3000000,0,31500000,0,31500000,'Paid'),(19,'newloan05502000110','2019-06-12',20000000,3000000,1500000,1500000,34500000,0,34500000,'Pending'),(20,'newloan05502000110','2019-07-12',20000000,3000000,0,3000000,37500000,0,37500000,'Pending'),(21,'newloan05502000110','2018-07-12',40000000,6000000,0,6000000,6000000,0,6000000,'Pending'),(22,'newloan05502000110','2018-08-12',40000000,6000000,0,6000000,7500000,0,7500000,'Pending'),(23,'newloan05502000110','2018-09-12',40000000,6000000,0,6000000,13500000,0,13500000,'Pending'),(24,'newloan05502000110','2018-10-12',40000000,6000000,0,6000000,19500000,0,19500000,'Pending'),(25,'newloan05502000110','2018-11-12',40000000,6000000,0,6000000,25500000,0,25500000,'Pending'),(26,'newloan05502000110','2018-12-12',40000000,6000000,0,6000000,31500000,0,31500000,'Pending'),(27,'newloan05502000110','2019-01-12',40000000,6000000,0,6000000,37500000,0,37500000,'Pending'),(28,'newloan05502000110','2019-02-12',40000000,6000000,0,6000000,43500000,0,43500000,'Pending'),(29,'newloan05502000110','2019-03-12',40000000,6000000,0,6000000,49500000,0,49500000,'Pending'),(30,'newloan05502000110','2019-04-12',40000000,6000000,0,6000000,55500000,0,55500000,'Pending'),(31,'newloan05502000110','2019-05-12',40000000,6000000,0,6000000,61500000,0,61500000,'Pending'),(32,'newloan05502000110','2019-06-12',40000000,6000000,0,6000000,67500000,0,67500000,'Pending'),(33,'newloan05502000110','2019-07-12',40000000,6000000,0,6000000,73500000,0,73500000,'Pending');
+/*!40000 ALTER TABLE `interestcomputed` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loan_arrears_tracker`
+--
+
+DROP TABLE IF EXISTS `loan_arrears_tracker`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loan_arrears_tracker` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `trn_date` date DEFAULT NULL,
+  `princimpal_amount` varchar(50) DEFAULT NULL,
+  `instalment_date` date DEFAULT NULL,
+  `account_name` varchar(50) DEFAULT NULL,
+  `account_number` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`trn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loan_arrears_tracker`
+--
+
+LOCK TABLES `loan_arrears_tracker` WRITE;
+/*!40000 ALTER TABLE `loan_arrears_tracker` DISABLE KEYS */;
+/*!40000 ALTER TABLE `loan_arrears_tracker` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loan_due_writeoff`
+--
+
+DROP TABLE IF EXISTS `loan_due_writeoff`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loan_due_writeoff` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `trn_date` date DEFAULT NULL,
+  `princimpal_amount` varchar(50) DEFAULT NULL,
+  `interest_amount` varchar(50) DEFAULT NULL,
+  `instalment_date` date DEFAULT NULL,
+  `aging` varchar(50) DEFAULT NULL,
+  `account_name` varchar(50) DEFAULT NULL,
+  `account_number` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`trn_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loan_due_writeoff`
+--
+
+LOCK TABLES `loan_due_writeoff` WRITE;
+/*!40000 ALTER TABLE `loan_due_writeoff` DISABLE KEYS */;
+INSERT INTO `loan_due_writeoff` VALUES (1,'2019-06-09','7000000','0','2016-07-06','1068','BAZIRAKE AUGUSTINE','05502000110'),(2,'2019-06-10','10000000','0','2018-05-11','395','BAZIRAKE AUGUSTINE','05502000110'),(3,'2019-06-13','11000000','1650000','2018-09-09','277','BAZIRAKE AUGUSTINE','05502000110'),(4,'2019-06-14','40000000','78000000','2018-07-12','337','BAZIRAKE AUGUSTINE','05502000110');
+/*!40000 ALTER TABLE `loan_due_writeoff` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loan_portfolio`
+--
+
+DROP TABLE IF EXISTS `loan_portfolio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loan_portfolio` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `trn_date` date DEFAULT NULL,
+  `princimpal_amount` varchar(50) DEFAULT NULL,
+  `instalment_date` date DEFAULT NULL,
+  `account_name` varchar(50) DEFAULT NULL,
+  `account_number` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`trn_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loan_portfolio`
+--
+
+LOCK TABLES `loan_portfolio` WRITE;
+/*!40000 ALTER TABLE `loan_portfolio` DISABLE KEYS */;
+INSERT INTO `loan_portfolio` VALUES (1,'2019-06-09','7000000.0','2016-07-06','BAZIRAKE AUGUSTINE','05502000110'),(2,'2019-06-10','1.0E7','2018-05-11','BAZIRAKE AUGUSTINE','05502000110'),(3,'2019-06-13','1.1E7','2018-09-09','BAZIRAKE AUGUSTINE','05502000110'),(4,'2019-06-14','4.0E7','2018-07-12','BAZIRAKE AUGUSTINE','05502000110');
+/*!40000 ALTER TABLE `loan_portfolio` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loan_portfolio_atrisk`
+--
+
+DROP TABLE IF EXISTS `loan_portfolio_atrisk`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loan_portfolio_atrisk` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `trn_date` date DEFAULT NULL,
+  `princimpal_amount` varchar(50) DEFAULT NULL,
+  `instalment_date` date DEFAULT NULL,
+  `account_name` varchar(50) DEFAULT NULL,
+  `account_number` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`trn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loan_portfolio_atrisk`
+--
+
+LOCK TABLES `loan_portfolio_atrisk` WRITE;
+/*!40000 ALTER TABLE `loan_portfolio_atrisk` DISABLE KEYS */;
+/*!40000 ALTER TABLE `loan_portfolio_atrisk` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loanerrorqueue`
+--
+
+DROP TABLE IF EXISTS `loanerrorqueue`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loanerrorqueue` (
+  `TrnId` int(11) NOT NULL AUTO_INCREMENT,
+  `LoanTrnId` varchar(100) NOT NULL DEFAULT 'NL000',
+  `LoanId` varchar(100) NOT NULL DEFAULT 'newLoan00000',
+  `ErrorDate` date NOT NULL DEFAULT '1970-01-01',
+  `PrincipalAmount` varchar(100) NOT NULL DEFAULT 'NL000',
+  `InterestRate` varchar(20) NOT NULL DEFAULT '30%',
+  `LoanTenure` varchar(100) NOT NULL DEFAULT 'NL000',
+  `ReasonForRejection` varchar(200) NOT NULL DEFAULT 'Amount Mismatch',
+  `InPutBy` int(11) NOT NULL DEFAULT '99',
+  `RejectedBy` int(11) NOT NULL DEFAULT '99',
+  `BorrowerName` varchar(100) NOT NULL DEFAULT 'NL000',
+  `BorrowerAccount` varchar(100) NOT NULL DEFAULT 'NL000',
+  `OtherProductId4` double NOT NULL DEFAULT '10000',
+  `OtherProductId6` varchar(100) NOT NULL DEFAULT 'Toto Account',
+  `OtherProductId7` int(11) NOT NULL DEFAULT '99',
+  `OtherProductId8` double NOT NULL DEFAULT '10000',
+  PRIMARY KEY (`TrnId`),
+  UNIQUE KEY `InPutBy` (`InPutBy`),
+  UNIQUE KEY `RejectedBy` (`RejectedBy`),
+  UNIQUE KEY `OtherProductId7` (`OtherProductId7`),
+  UNIQUE KEY `TrnId` (`TrnId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loanerrorqueue`
+--
+
+LOCK TABLES `loanerrorqueue` WRITE;
+/*!40000 ALTER TABLE `loanerrorqueue` DISABLE KEYS */;
+/*!40000 ALTER TABLE `loanerrorqueue` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loanpenaltyrecoverstore`
+--
+
+DROP TABLE IF EXISTS `loanpenaltyrecoverstore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loanpenaltyrecoverstore` (
+  `TrnId` int(11) NOT NULL AUTO_INCREMENT,
+  `TrnDate` date NOT NULL DEFAULT '1970-01-01',
+  `InstalmentNumber` varchar(45) DEFAULT '0',
+  `AccountNumber` varchar(45) DEFAULT '055020000010',
+  `RecoverStartDate` date NOT NULL DEFAULT '1970-01-01',
+  `RecoverNextDueDate` date NOT NULL DEFAULT '1970-01-01',
+  `RecoverEndDate` date NOT NULL DEFAULT '1970-01-01',
+  `RecoverNumberInstalments` varchar(45) DEFAULT '0',
+  `RecoverRemainingInstalments` varchar(45) DEFAULT '0',
+  `RecoveredNumberInstalments` varchar(45) DEFAULT '0',
+  `InstalmentNextDueDate` date NOT NULL DEFAULT '1970-01-01',
+  `RecoverCharge` varchar(45) DEFAULT '0.0',
+  `RecoverChargeRemaining` varchar(45) DEFAULT '0.0',
+  `ChargeRecovered` varchar(45) DEFAULT '0.0',
+  `RecoverStatus1` varchar(45) DEFAULT 'NCO',
+  `RecoverStatus2` varchar(45) DEFAULT 'NCO',
+  `RecoverStatus3` varchar(45) DEFAULT 'NCO',
+  `RecoveryMethod` varchar(45) DEFAULT 'Other',
+  `RecoveryInstalmentSize` varchar(45) DEFAULT '0.0',
+  `OtherThree` varchar(45) DEFAULT 'NCO',
+  `OtherFour` varchar(45) DEFAULT 'NCO',
+  `OtherFive` varchar(45) DEFAULT 'NCO',
+  PRIMARY KEY (`TrnId`),
+  UNIQUE KEY `TrnId_UNIQUE` (`TrnId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loanpenaltyrecoverstore`
+--
+
+LOCK TABLES `loanpenaltyrecoverstore` WRITE;
+/*!40000 ALTER TABLE `loanpenaltyrecoverstore` DISABLE KEYS */;
+/*!40000 ALTER TABLE `loanpenaltyrecoverstore` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loanprocessingstore`
+--
+
+DROP TABLE IF EXISTS `loanprocessingstore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loanprocessingstore` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `trn_date` date DEFAULT NULL,
+  `princimpal_amount` varchar(50) DEFAULT NULL,
+  `interest_amount` varchar(50) DEFAULT NULL,
+  `instalment_start_date` date DEFAULT NULL,
+  `instalment_end_date` date DEFAULT NULL,
+  `loan_tenure` varchar(50) DEFAULT NULL,
+  `loan_cycle_status` varchar(50) DEFAULT NULL,
+  `account_name` varchar(50) DEFAULT NULL,
+  `account_number` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`trn_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loanprocessingstore`
+--
+
+LOCK TABLES `loanprocessingstore` WRITE;
+/*!40000 ALTER TABLE `loanprocessingstore` DISABLE KEYS */;
+INSERT INTO `loanprocessingstore` VALUES (1,'2019-06-07','8.0E7','1.2E7','2019-05-02','2019-05-02','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(2,'2019-06-07','8.0E7','1.2E7','2019-05-02','2019-05-02','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(3,'2019-06-07','2000000.0','300000.0','2019-01-04','2019-01-04','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(4,'2019-06-07','2000000.0','300000.0','2019-01-04','2019-01-04','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(5,'2019-06-07','3000000.0','450000.0','2019-04-01','2019-04-01','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(6,'2019-06-07','3000000.0','450000.0','2019-04-01','2019-04-01','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(7,'2019-06-07','5000000.0','750000.0','2018-07-05','2018-07-05','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(8,'2019-06-07','5000000.0','750000.0','2018-07-05','2018-07-05','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(9,'2019-06-07','6000000.0','900000.0','2019-05-02','2019-05-02','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(10,'2019-06-07','6000000.0','900000.0','2019-05-02','2019-05-02','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(11,'2019-06-07','6900000.0','1035000.0','2018-05-10','2018-05-10','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(12,'2019-06-07','6900000.0','1035000.0','2018-05-10','2018-05-10','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(13,'2019-06-07','7000000.0','1050000.0','2016-07-06','2016-07-06','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(14,'2019-06-07','7000000.0','1050000.0','2016-07-06','2016-07-06','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(15,'2019-06-09','1.0E7','1500000.0','2018-06-09','2018-06-09','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(16,'2019-06-09','1.0E7','1500000.0','2018-06-09','2018-06-09','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(17,'2019-06-09','7000000.0','1050000.0','2019-07-09','2019-07-09','1.0 MONTHS','Approved','LUYOMBYA WYCLIF','05502000210'),(18,'2019-06-09','7000000.0','1050000.0','2019-07-09','2019-07-09','1','Disbursed','LUYOMBYA WYCLIF','05502000210'),(19,'2019-06-09','1.3E7','1950000.0','2019-07-09','2019-07-09','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(20,'2019-06-09','1.3E7','1950000.0','2019-07-09','2019-07-09','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(21,'2019-06-09','1.0E7','1500000.0','2018-05-11','2018-05-11','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(22,'2019-06-09','1.0E7','1500000.0','2018-05-11','2018-05-11','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(23,'2019-06-10','9000000.0','1350000.0','2019-05-01','2019-05-01','1.0 MONTHS','Approved','LUYOMBYA WYCLIF','05502000210'),(24,'2019-06-10','9000000.0','1350000.0','2019-05-01','2019-05-01','1','Disbursed','LUYOMBYA WYCLIF','05502000210'),(25,'2019-06-10','2.0E7','3000000.0','2018-07-06','2018-07-06','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(26,'2019-06-10','2.0E7','3000000.0','2018-07-06','2018-07-06','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(27,'2019-06-10','1.0E7','1500000.0','2018-07-13','2018-07-13','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(28,'2019-06-10','1.0E7','1500000.0','2018-07-13','2018-07-13','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(29,'2019-06-10','1.0E7','1500000.0','2018-03-06','2018-03-06','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(30,'2019-06-10','1.0E7','1500000.0','2018-03-06','2018-03-06','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(31,'2019-06-12','1.0E7','1500000.0','2019-04-04','2019-04-04','1.0 MONTHS','Approved','LUYOMBYA WYCLIF','05502000210'),(32,'2019-06-12','1.0E7','1500000.0','2019-04-04','2019-04-04','1','Disbursed','LUYOMBYA WYCLIF','05502000210'),(33,'2019-06-12','1.15E7','1725000.0','2019-07-12','2019-07-12','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(34,'2019-06-12','1.15E7','1725000.0','2019-07-12','2019-07-12','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(35,'2019-06-12','1.15E7','1725000.0','2019-06-01','2019-06-01','1.0 MONTHS','Approved','LUYOMBYA WYCLIF','05502000210'),(36,'2019-06-12','1.15E7','1725000.0','2019-06-01','2019-06-01','1','Disbursed','LUYOMBYA WYCLIF','05502000210'),(37,'2019-06-12','1.3225E7','1983750.0','2019-07-01','2019-07-01','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(38,'2019-06-12','1.3225E7','1983750.0','2019-07-01','2019-07-01','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(39,'2019-06-12','1.0E7','1500000.0','2017-07-13','2017-07-13','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(40,'2019-06-12','1.0E7','1500000.0','2017-07-13','2017-07-13','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(41,'2019-06-12','1.1E7','1650000.0','2019-04-05','2019-04-05','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(42,'2019-06-12','1.1E7','1650000.0','2019-04-05','2019-04-05','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(43,'2019-06-12','1.1E7','1650000.0','2018-05-09','2018-05-09','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(44,'2019-06-12','1.1E7','1650000.0','2018-05-09','2018-05-09','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(45,'2019-06-13','1.0E7','1500000.0','2019-02-02','2019-02-02','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(46,'2019-06-13','1.0E7','1500000.0','2019-02-02','2019-02-02','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(47,'2019-06-13','1.1E7','1650000.0','2019-04-05','2019-04-05','1.0 MONTHS','Approved','LUYOMBYA WYCLIF','05502000210'),(48,'2019-06-13','1.1E7','1650000.0','2019-04-05','2019-04-05','1','Disbursed','LUYOMBYA WYCLIF','05502000210'),(49,'2019-06-13','1.0E7','1500000.0','2019-04-04','2019-04-04','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(50,'2019-06-13','1.0E7','1500000.0','2019-04-04','2019-04-04','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(51,'2019-06-13','2.0E7','3000000.0','2018-07-12','2018-07-12','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(52,'2019-06-13','2.0E7','3000000.0','2018-07-12','2018-07-12','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110'),(53,'2019-06-13','4.0E7','6000000.0','2018-07-12','2018-07-12','1.0 MONTHS','Approved','BAZIRAKE AUGUSTINE','05502000110'),(54,'2019-06-13','4.0E7','6000000.0','2018-07-12','2018-07-12','1','Disbursed','BAZIRAKE AUGUSTINE','05502000110');
+/*!40000 ALTER TABLE `loanprocessingstore` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `new_loan_appstore`
+--
+
+DROP TABLE IF EXISTS `new_loan_appstore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `new_loan_appstore` (
+  `trn_id` varchar(10) NOT NULL,
+  `trn_date` date NOT NULL,
+  `loan_id` varchar(45) DEFAULT NULL,
+  `total_instalments` varchar(45) DEFAULT NULL,
+  `remaining_instalments` varchar(45) DEFAULT NULL,
+  `princimpal_amount` varchar(45) DEFAULT NULL,
+  `total_interest` varchar(45) DEFAULT NULL,
+  `total_loanAmount` varchar(45) DEFAULT NULL,
+  `balance_due` varchar(45) DEFAULT NULL,
+  `instalment_start_date` date NOT NULL,
+  `instalment_next_due_date` date NOT NULL,
+  `instalment_end_date` date NOT NULL,
+  `interest_rate` varchar(45) DEFAULT NULL,
+  `applicant_account_name` varchar(45) DEFAULT NULL,
+  `loan_cycle_status` varchar(45) DEFAULT NULL,
+  `trn_time` time NOT NULL,
+  `instalments_paid` varchar(45) DEFAULT NULL,
+  `instalment_amount` varchar(45) DEFAULT NULL,
+  `loan_tenure` varchar(45) DEFAULT NULL,
+  `applicant_account_number` varchar(45) DEFAULT NULL,
+  `inputter_id` varchar(10) DEFAULT NULL,
+  `authoriser_id` varchar(10) DEFAULT NULL,
+  `gruop_id` varchar(30) DEFAULT NULL,
+  `GroupId` varchar(50) NOT NULL DEFAULT 'G0001',
+  `GroupName` varchar(100) NOT NULL DEFAULT 'GROUP1',
+  `SecurityLoan` varchar(500) DEFAULT NULL,
+  `OtherGroups2` varchar(100) NOT NULL DEFAULT 'Other2',
+  `OtherGroups3` varchar(100) NOT NULL DEFAULT 'Other3',
+  `OtherGroups4` varchar(100) NOT NULL DEFAULT 'Other4',
+  `TotalInterestPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalInterestRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalPrincipalPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalPrincipalRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalAccumulatedInterestPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalAccumulatedInterestRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalLoanPenaltyPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalLoanPenaltyRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalAccruedInterestRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalAccruedInterestPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  PRIMARY KEY (`trn_id`),
+  UNIQUE KEY `trn_id_UNIQUE` (`trn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `new_loan_appstore`
+--
+
+LOCK TABLES `new_loan_appstore` WRITE;
+/*!40000 ALTER TABLE `new_loan_appstore` DISABLE KEYS */;
+INSERT INTO `new_loan_appstore` VALUES ('NL0001','2019-06-07','closedloan105502000110','1','0','8.0E7','84000000','9.2E7','0.0','2019-05-02','2019-07-02','2019-05-02','180.0','BAZIRAKE AUGUSTINE','Completed','03:30:21','96000000','9.2E7','1.0 MONTHS','05502000110','10001','10001','10001','First Time Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','16000000','0.0','80000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0002','2019-06-07','closedloan205502000110','1','0','2000000.0','2840000','2300000.0','0.0','2019-01-04','2019-07-04','2019-01-04','180.0','BAZIRAKE AUGUSTINE','Completed','08:03:30','2370000.0','2300000.0','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','370000.0','0.0','2000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0003','2019-06-07','closedloan305502000110','1','0','3000000.0','2370000','3450000.0','0.0','2019-04-01','2019-07-01','2019-04-01','180.0','BAZIRAKE AUGUSTINE','Completed','08:18:40','3285000.0','3450000.0','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','285000.0','0.0','3000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0004','2019-06-07','closedloan405502000110','1','0','5000000.0','12750000','5750000.0','0.0','2018-07-05','2019-07-05','2018-07-05','180.0','BAZIRAKE AUGUSTINE','Completed','08:36:50','5750000.0','5750000.0','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','750000.0','0.0','5000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0005','2019-06-07','closedloan505502000110','1','0','6000000.0','7200000','6900000.0','0.0','2019-05-02','2019-07-02','2019-05-02','180.0','BAZIRAKE AUGUSTINE','Completed','08:39:59','6900000.0','6900000.0','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','900000.0','0.0','6000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0006','2019-06-07','closedloan605502000110','1','0','6900000.0','17595000','7935000.0','0.0','2018-05-10','2019-06-10','2018-05-10','180.0','BAZIRAKE AUGUSTINE','Completed','08:48:17','7935000.0','7935000.0','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1035000.0','0.0','6900000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0007','2019-06-09','closedloan705502000110','1','0','7000000.0',NULL,'8050000.0','0.0','2016-07-06','2019-09-06','2016-07-06','180.0','BAZIRAKE AUGUSTINE','Completed','08:52:19','9100000.0','8050000.0','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','2100000.0','0.0','7000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0012','2019-06-09','closedloan805502000110','1','0','1.0E7','30000000','1.15E7','0.0','2018-06-09','2019-09-09','2018-06-09','180.0','BAZIRAKE AUGUSTINE','Completed','08:01:16','13000000','1.15E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','3000000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0013','2019-06-09','closedloan105502000210','1','0','7000000.0','5250000','8050000.0','0.0','2019-07-09','2019-09-09','2019-07-09','180.0','LUYOMBYA WYCLIF','Completed','08:04:23','9100000.0','8050000.0','1.0 MONTHS','05502000210','10001','10001','10001','First Time Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','2100000.0','0.0','7000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0014','2019-06-09','closedloan905502000110','1','0','1.3E7','1950000.0','1.495E7','0.0','2019-07-09','2019-07-09','2019-07-09','180.0','BAZIRAKE AUGUSTINE','Completed','08:25:39','14950000','1.495E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1950000.0','0.0','13000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0016','2019-06-10','closedloan205502000210','1','0','9000000.0','44550000','1.035E7','0.0','2019-05-01','2019-07-01','2019-05-01','180.0','LUYOMBYA WYCLIF','Completed','06:30:23','11700000','1.035E7','1.0 MONTHS','05502000210','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','2700000.0','0.0','9000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0017','2019-06-10','closedloan1005502000110','1','0','2.0E7','51000000','2.3E7','0.0','2018-07-06','2019-07-06','2018-07-06','180.0','BAZIRAKE AUGUSTINE','Completed','11:35:33','26000000','2.3E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','6000000.0','0.0','20000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0018','2019-06-10','closedloan1105502000110','1','0','1.0E7','22500000','1.15E7','0.0','2018-07-13','2019-06-13','2018-07-13','180.0','BAZIRAKE AUGUSTINE','Completed','11:44:38','11500000','1.15E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0019','2019-06-10','closedloan1205502000110','1','0','1.0E7','211500000','1.15E7','0.0','2018-03-06','2019-06-06','2018-03-06','180.0','BAZIRAKE AUGUSTINE','Completed','11:49:50','11500000','1.15E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0020','2019-06-12','closedloan305502000210','1','0','1.0E7','12000000','1.15E7','0.0','2019-04-04','2019-06-04','2019-04-04','180.0','LUYOMBYA WYCLIF','Completed','07:16:11','11500000','1.15E7','1.0 MONTHS','05502000210','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0021','2019-06-12','closedloan1305502000110','1','0','1.15E7','1725000.0','1.3225E7','0.0','2019-07-12','2019-07-12','2019-07-12','180.0','BAZIRAKE AUGUSTINE','Completed','16:23:00','13225000','1.3225E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1725000.0','0.0','11500000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0022','2019-06-12','closedloan405502000210','1','0','1.15E7','1725000.0','1.3225E7','0.0','2019-06-01','2019-06-01','2019-06-01','180.0','LUYOMBYA WYCLIF','Completed','16:24:25','13225000','1.3225E7','1.0 MONTHS','05502000210','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1725000.0','0.0','11500000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0023','2019-06-12','closedloan1405502000110','1','0','1.3225E7','1983750.0','1.520875E7','0.0','2019-07-01','2019-07-01','2019-07-01','180.0','BAZIRAKE AUGUSTINE','Completed','16:59:44','15208750','1.520875E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1983750.0','0.0','13225000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0024','2019-06-12','closedloan1505502000110','1','0','1.0E7','1500000.0','1.15E7','0.0','2017-07-13','2017-07-13','2017-07-13','180.0','BAZIRAKE AUGUSTINE','Completed','17:08:21','11500000','1.15E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0025','2019-06-12','closedloan1605502000110','1','0','1.1E7',NULL,'1.265E7','0.0','2019-04-05','2019-09-05','2019-04-05','180.0','BAZIRAKE AUGUSTINE','Completed','17:13:59','12650000','1.265E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1650000.0','0.0','11000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0026','2019-06-13','closedloan1705502000110','1','0','1.1E7','24750000','1.265E7','0.0','2018-05-09','2019-07-09','2018-05-09','180.0','BAZIRAKE AUGUSTINE','Completed','22:54:16','12650000','1.265E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1650000.0','0.0','11000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0027','2019-06-13','closedloan1805502000110','1','0','1.0E7','9000000','1.15E7','0.0','2019-02-02','2019-07-02','2019-02-02','180.0','BAZIRAKE AUGUSTINE','Completed','04:12:07','11500000','1.15E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0028','2019-06-13','closedloan505502000210','1','0','1.1E7','6600000','1.265E7','0.0','2019-04-05','2019-07-05','2019-04-05','180.0','LUYOMBYA WYCLIF','Completed','04:50:14','12650000','1.265E7','1.0 MONTHS','05502000210','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1650000.0','0.0','11000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0030','2019-06-13','closedloan1905502000110','1','0','2.0E7','39000000','2.3E7','0.0','2018-07-12','2019-07-12','2018-07-12','180.0','BAZIRAKE AUGUSTINE','Completed','05:29:40','59000000','2.3E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','39000000','0.0','20000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0'),('NL0031','2019-06-13','newloan05502000110','1','1','4.0E7','78000000','4.6E7','118000000','2018-07-12','2019-07-12','2018-07-12','180.0','BAZIRAKE AUGUSTINE','Disbursed','06:20:40','0.0','4.6E7','1.0 MONTHS','05502000110','10001','10001','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','0.0','78000000','0.0','4.0E7','0.0','0.0','0.0','0.0','0.0','0.0');
+/*!40000 ALTER TABLE `new_loan_appstore` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `new_loan_appstore1`
+--
+
+DROP TABLE IF EXISTS `new_loan_appstore1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `new_loan_appstore1` (
+  `trn_id` varchar(10) NOT NULL,
+  `trn_date` date NOT NULL,
+  `loan_id` varchar(45) DEFAULT NULL,
+  `total_instalments` varchar(45) DEFAULT NULL,
+  `remaining_instalments` varchar(45) DEFAULT NULL,
+  `princimpal_amount` varchar(45) DEFAULT NULL,
+  `total_interest` varchar(45) DEFAULT NULL,
+  `total_loanAmount` varchar(45) DEFAULT NULL,
+  `balance_due` varchar(45) DEFAULT NULL,
+  `instalment_start_date` date NOT NULL,
+  `instalment_next_due_date` date NOT NULL,
+  `instalment_end_date` date NOT NULL,
+  `interest_rate` varchar(45) DEFAULT NULL,
+  `applicant_account_name` varchar(45) DEFAULT NULL,
+  `loan_cycle_status` varchar(45) DEFAULT NULL,
+  `trn_time` time NOT NULL,
+  `instalments_paid` varchar(45) DEFAULT NULL,
+  `instalment_amount` varchar(45) DEFAULT NULL,
+  `loan_tenure` varchar(45) DEFAULT NULL,
+  `applicant_account_number` varchar(45) DEFAULT NULL,
+  `inputter_id` varchar(10) DEFAULT NULL,
+  `authoriser_id` varchar(10) DEFAULT NULL,
+  `gruop_id` varchar(30) DEFAULT NULL,
+  `GroupId` varchar(50) NOT NULL DEFAULT 'G0001',
+  `GroupName` varchar(100) NOT NULL DEFAULT 'GROUP1',
+  `SecurityLoan` varchar(500) DEFAULT NULL,
+  `OtherGroups2` varchar(100) NOT NULL DEFAULT 'Other2',
+  `OtherGroups3` varchar(100) NOT NULL DEFAULT 'Other3',
+  `OtherGroups4` varchar(100) NOT NULL DEFAULT 'Other4',
+  `TotalInterestPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalInterestRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalPrincipalPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalPrincipalRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalAccumulatedInterestPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalAccumulatedInterestRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalLoanPenaltyPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalLoanPenaltyRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalAccruedInterestRemaining` varchar(100) NOT NULL DEFAULT '0.0',
+  `TotalAccruedInterestPaid` varchar(100) NOT NULL DEFAULT '0.0',
+  `ClientExistanceCat` varchar(100) NOT NULL DEFAULT 'First Time Borrower',
+  `BorrowingCategory` varchar(100) NOT NULL DEFAULT 'Group',
+  `LoanGroupId` varchar(100) NOT NULL DEFAULT 'Kanama',
+  `LoanGroupName` varchar(100) NOT NULL DEFAULT 'Kanama',
+  `LoanCycle` varchar(100) NOT NULL DEFAULT 'Cycle1',
+  `LoanProduct` varchar(100) NOT NULL DEFAULT 'Salary Loan',
+  `MarketingChannel` varchar(100) NOT NULL DEFAULT 'Internet',
+  `TenureType` varchar(100) NOT NULL DEFAULT 'Amortized Loan',
+  `LoanPurpose` varchar(100) NOT NULL DEFAULT 'Personal Effect',
+  `PaymentHistory` varchar(100) NOT NULL DEFAULT 'No History',
+  `ClientLoyalty` varchar(100) NOT NULL DEFAULT 'Cant Tell',
+  `SecurityUsage` varchar(100) NOT NULL DEFAULT 'No',
+  `NumberOfSecurity` varchar(100) NOT NULL DEFAULT '0.0',
+  `EconomicWelbeingLevel` varchar(100) NOT NULL DEFAULT 'Level 1',
+  `PaymentSource` varchar(100) NOT NULL DEFAULT 'Salary',
+  `AmountTakenCategory` varchar(100) NOT NULL DEFAULT 'Above 100M',
+  `IncomeLevel` varchar(100) NOT NULL DEFAULT 'Very Low',
+  `EmploymentCat` varchar(100) NOT NULL DEFAULT 'Formally Employed',
+  `Occupation` varchar(100) NOT NULL DEFAULT 'Agriculture',
+  `Sex` varchar(100) NOT NULL DEFAULT 'Male',
+  `MaritalStatus` varchar(100) NOT NULL DEFAULT 'Single',
+  `AgeGroup` varchar(100) NOT NULL DEFAULT 'Between 18-25Yrs',
+  `EducationLevel` varchar(100) NOT NULL DEFAULT 'Not Educatted',
+  `PreferedContactChannel` varchar(100) NOT NULL DEFAULT 'Email',
+  `Email` varchar(100) NOT NULL DEFAULT 'augbazi@gmail.com',
+  `BorrowerCharacter` varchar(100) NOT NULL DEFAULT 'Daughtful',
+  `PhoneNumber` varchar(100) NOT NULL DEFAULT '0782231039',
+  `commentsClosing` varchar(600) NOT NULL DEFAULT '1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified',
+  `OtherTwo` varchar(100) NOT NULL DEFAULT 'NA',
+  `OtherThree` varchar(100) NOT NULL DEFAULT 'NA',
+  `OtherFour` varchar(100) NOT NULL DEFAULT 'NA',
+  `OtherFive` varchar(100) NOT NULL DEFAULT 'NA',
+  PRIMARY KEY (`trn_id`),
+  UNIQUE KEY `trn_id_UNIQUE` (`trn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `new_loan_appstore1`
+--
+
+LOCK TABLES `new_loan_appstore1` WRITE;
+/*!40000 ALTER TABLE `new_loan_appstore1` DISABLE KEYS */;
+INSERT INTO `new_loan_appstore1` VALUES ('NL0001','2019-06-07','closedloan105502000110','1','0','8.0E7','84000000','9.2E7','0.0','2019-05-02','2019-07-02','2019-05-02','180.0','BAZIRAKE AUGUSTINE','Completed','03:30:21','96000000','9.2E7','1.0 MONTHS','05502000110','10001','10000','10001','First Time Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','16000000','0.0','80000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','First Time Borrower','Individual','Group 1','Group 1','Cycle1','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0002','2019-06-07','closedloan205502000110','1','0','2000000.0','2840000','2300000.0','0.0','2019-01-04','2019-07-04','2019-01-04','180.0','BAZIRAKE AUGUSTINE','Completed','08:03:30','2370000.0','2300000.0','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','370000.0','0.0','2000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0003','2019-06-07','closedloan305502000110','1','0','3000000.0','2370000','3450000.0','0.0','2019-04-01','2019-07-01','2019-04-01','180.0','BAZIRAKE AUGUSTINE','Completed','08:18:40','3285000.0','3450000.0','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','285000.0','0.0','3000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle3','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0004','2019-06-07','closedloan405502000110','1','0','5000000.0','12750000','5750000.0','0.0','2018-07-05','2019-07-05','2018-07-05','180.0','BAZIRAKE AUGUSTINE','Completed','08:36:50','5750000.0','5750000.0','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','750000.0','0.0','5000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle4','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0005','2019-06-07','closedloan505502000110','1','0','6000000.0','7200000','6900000.0','0.0','2019-05-02','2019-07-02','2019-05-02','180.0','BAZIRAKE AUGUSTINE','Completed','08:39:59','6900000.0','6900000.0','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','900000.0','0.0','6000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle5','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0006','2019-06-07','closedloan605502000110','1','0','6900000.0','17595000','7935000.0','0.0','2018-05-10','2019-06-10','2018-05-10','180.0','BAZIRAKE AUGUSTINE','Completed','08:48:17','7935000.0','7935000.0','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1035000.0','0.0','6900000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle6','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0007','2019-06-09','closedloan705502000110','1','0','7000000.0',NULL,'8050000.0','0.0','2016-07-06','2019-09-06','2016-07-06','180.0','BAZIRAKE AUGUSTINE','Completed','08:52:19','9100000.0','8050000.0','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','2100000.0','0.0','7000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle7','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0012','2019-06-09','closedloan805502000110','1','0','1.0E7','30000000','1.15E7','0.0','2018-06-09','2019-09-09','2018-06-09','180.0','BAZIRAKE AUGUSTINE','Completed','08:01:16','13000000','1.15E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','3000000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle8','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0013','2019-06-09','closedloan105502000210','1','0','7000000.0','5250000','8050000.0','0.0','2019-07-09','2019-09-09','2019-07-09','180.0','LUYOMBYA WYCLIF','Completed','08:04:23','9100000.0','8050000.0','1.0 MONTHS','05502000210','10001','10000','10001','First Time Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','2100000.0','0.0','7000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','First Time Borrower','Individual','Group 1','Group 1','Cycle1','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0014','2019-06-09','closedloan905502000110','1','0','1.3E7','1950000.0','1.495E7','0.0','2019-07-09','2019-07-09','2019-07-09','180.0','BAZIRAKE AUGUSTINE','Completed','08:25:39','14950000','1.495E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1950000.0','0.0','13000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle9','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0016','2019-06-10','closedloan205502000210','1','0','9000000.0','44550000','1.035E7','0.0','2019-05-01','2019-07-01','2019-05-01','180.0','LUYOMBYA WYCLIF','Completed','06:30:23','11700000','1.035E7','1.0 MONTHS','05502000210','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','2700000.0','0.0','9000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0017','2019-06-10','closedloan1005502000110','1','0','2.0E7','51000000','2.3E7','0.0','2018-07-06','2019-07-06','2018-07-06','180.0','BAZIRAKE AUGUSTINE','Completed','11:35:33','26000000','2.3E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','6000000.0','0.0','20000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle10','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0018','2019-06-10','closedloan1105502000110','1','0','1.0E7','22500000','1.15E7','0.0','2018-07-13','2019-06-13','2018-07-13','180.0','BAZIRAKE AUGUSTINE','Completed','11:44:38','11500000','1.15E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0019','2019-06-10','closedloan1205502000110','1','0','1.0E7','211500000','1.15E7','0.0','2018-03-06','2019-06-06','2018-03-06','180.0','BAZIRAKE AUGUSTINE','Completed','11:49:50','11500000','1.15E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0020','2019-06-12','closedloan305502000210','1','0','1.0E7','12000000','1.15E7','0.0','2019-04-04','2019-06-04','2019-04-04','180.0','LUYOMBYA WYCLIF','Completed','07:16:11','11500000','1.15E7','1.0 MONTHS','05502000210','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle3','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0021','2019-06-12','closedloan1305502000110','1','0','1.15E7','1725000.0','1.3225E7','0.0','2019-07-12','2019-07-12','2019-07-12','180.0','BAZIRAKE AUGUSTINE','Completed','16:23:00','13225000','1.3225E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1725000.0','0.0','11500000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0022','2019-06-12','closedloan405502000210','1','0','1.15E7','1725000.0','1.3225E7','0.0','2019-06-01','2019-06-01','2019-06-01','180.0','LUYOMBYA WYCLIF','Completed','16:24:25','13225000','1.3225E7','1.0 MONTHS','05502000210','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1725000.0','0.0','11500000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle4','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0023','2019-06-12','closedloan1405502000110','1','0','1.3225E7','1983750.0','1.520875E7','0.0','2019-07-01','2019-07-01','2019-07-01','180.0','BAZIRAKE AUGUSTINE','Completed','16:59:44','15208750','1.520875E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1983750.0','0.0','13225000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0024','2019-06-12','closedloan1505502000110','1','0','1.0E7','1500000.0','1.15E7','0.0','2017-07-13','2017-07-13','2017-07-13','180.0','BAZIRAKE AUGUSTINE','Completed','17:08:21','11500000','1.15E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0025','2019-06-12','closedloan1605502000110','1','0','1.1E7',NULL,'1.265E7','0.0','2019-04-05','2019-09-05','2019-04-05','180.0','BAZIRAKE AUGUSTINE','Completed','17:13:59','12650000','1.265E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1650000.0','0.0','11000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0026','2019-06-13','closedloan1705502000110','1','0','1.1E7','24750000','1.265E7','0.0','2018-05-09','2019-07-09','2018-05-09','180.0','BAZIRAKE AUGUSTINE','Completed','22:54:16','12650000','1.265E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1650000.0','0.0','11000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0027','2019-06-13','closedloan1805502000110','1','0','1.0E7','9000000','1.15E7','0.0','2019-02-02','2019-07-02','2019-02-02','180.0','BAZIRAKE AUGUSTINE','Completed','04:12:07','11500000','1.15E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1500000.0','0.0','10000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0028','2019-06-13','closedloan505502000210','1','0','1.1E7','6600000','1.265E7','0.0','2019-04-05','2019-07-05','2019-04-05','180.0','LUYOMBYA WYCLIF','Completed','04:50:14','12650000','1.265E7','1.0 MONTHS','05502000210','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','1650000.0','0.0','11000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle5','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0030','2019-06-13','closedloan1905502000110','1','0','2.0E7','39000000','2.3E7','0.0','2018-07-12','2019-07-12','2018-07-12','180.0','BAZIRAKE AUGUSTINE','Completed','05:29:40','59000000','2.3E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','39000000','0.0','20000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA'),('NL0031','2019-06-13','newloan05502000110','1','1','4.0E7','78000000','4.6E7','118000000','2018-07-12','2019-07-12','2018-07-12','180.0','BAZIRAKE AUGUSTINE','Applied','06:20:40','0.0','4.6E7','1.0 MONTHS','05502000110','10001','10000','10001','Existing Borrower','Individual','1;Land;Not Specified','Mothly Income','BUSINESS PURPOSE,','NA','0.0','78000000','0.0','4.0E7','0.0','0.0','0.0','0.0','0.0','0.0','Existing Borrower','Individual','Group 1','Group 1','Cycle2','Salary Loan','Friends','Single Instalment Loan','Business Financing','No History','Can\'t Tell','No','0','Level 1','Monthly Income','100,000-200,000','Very Low','Self Employment','Agriculture','Male','Single','Minor','No Education','Email','augbazi@mail.com','Excellent','Excellent','1;General Comments;Not Specified:2;Payment promptness;Not Specified:3;Self Reminding;Not Specified:4;Top Ups;Not Specified:5;Others (Please Specify);Not Specified','NA','NA','NA','NA');
+/*!40000 ALTER TABLE `new_loan_appstore1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `new_loan_appstoreamort`
+--
+
+DROP TABLE IF EXISTS `new_loan_appstoreamort`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `new_loan_appstoreamort` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `instalment_no` int(11) NOT NULL DEFAULT '1',
+  `princimpal_amount` varchar(50) NOT NULL DEFAULT '0.0',
+  `princimpal_amount_run_bal` varchar(50) NOT NULL DEFAULT '0.0',
+  `interest_amount` varchar(50) NOT NULL DEFAULT '10000.0',
+  `interest_amount_run_bal` varchar(50) NOT NULL DEFAULT '0.0',
+  `instalment_amount` varchar(50) NOT NULL DEFAULT '0.0',
+  `instalment_paid` varchar(50) NOT NULL DEFAULT '0.0',
+  `beginning_bal` varchar(50) NOT NULL DEFAULT '0.0',
+  `closing_bal` varchar(50) NOT NULL DEFAULT '0.0',
+  `instalment_due_date` date NOT NULL DEFAULT '1979-01-01',
+  `instalment_status` varchar(50) NOT NULL DEFAULT 'P',
+  `instalment_paid_date` date NOT NULL DEFAULT '1979-01-01',
+  `instalment_paid_variance` varchar(50) NOT NULL DEFAULT '2 Days',
+  `LoanPenalty` varchar(50) NOT NULL DEFAULT '0.0',
+  `AccruedInterest` varchar(50) NOT NULL DEFAULT '0.0',
+  `InstalmentRemaining` varchar(50) NOT NULL DEFAULT '0.0',
+  `PrincipalPaid` varchar(50) NOT NULL DEFAULT '0.0',
+  `PrincipalRemaining` varchar(50) NOT NULL DEFAULT '0.0',
+  `InterestPaid` varchar(50) NOT NULL DEFAULT '0.0',
+  `InterestRemaing` varchar(50) NOT NULL DEFAULT '0.0',
+  `LoanPenaltyPaid` varchar(50) NOT NULL DEFAULT '0.0',
+  `LoanPenaltyRemaining` varchar(50) NOT NULL DEFAULT '0.0',
+  `AccruedInterestPaid` varchar(50) NOT NULL DEFAULT '0.0',
+  `AccruedInterestRemaing` varchar(50) NOT NULL DEFAULT '0.0',
+  `AccumulatedInterest` varchar(50) NOT NULL DEFAULT '0.0',
+  `AccumulatedInterestPaid` varchar(50) NOT NULL DEFAULT '0.0',
+  `AccumulatedInterestRemaining` varchar(50) NOT NULL DEFAULT '0.0',
+  `OtherOne` varchar(50) NOT NULL DEFAULT 'NYA',
+  `OtherTwo` date NOT NULL DEFAULT '1979-01-01',
+  `OtherThree` date NOT NULL DEFAULT '1979-01-01',
+  `master1_id` varchar(50) NOT NULL DEFAULT '0.0',
+  `master2_id` varchar(50) NOT NULL DEFAULT '0.0',
+  PRIMARY KEY (`trn_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `new_loan_appstoreamort`
+--
+
+LOCK TABLES `new_loan_appstoreamort` WRITE;
+/*!40000 ALTER TABLE `new_loan_appstoreamort` DISABLE KEYS */;
+INSERT INTO `new_loan_appstoreamort` VALUES (1,1,'8.0E7','8.0E7','84000000','1.2E7','164000000','96000000','9.2E7','0.0','2019-07-02','P','2019-06-07','25','0.0','0.0','0.0','80000000','0.0','16000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-05-02','2019-05-02','NL0001','closedloan105502000110'),(2,1,'2000000.0','2000000.0','2840000','300000.0','4840000','2370000.0','2300000.0','0.0','2019-05-04','P','2019-06-07','-34','0.0','0.0','0.0','2000000.0','0.0','370000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-01-04','2019-01-04','NL0002','closedloan205502000110'),(3,1,'3000000.0','3000000.0','2370000','450000.0','5370000','3285000.0','3450000.0','0.0','2019-05-01','P','2019-06-07','-37','0.0','0.0','0.0','3000000.0','0.0','285000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-04-01','2019-04-01','NL0003','closedloan305502000110'),(4,1,'5000000.0','5000000.0','750000','750000.0','17750000','5750000.0','5750000.0','0.0','2018-08-05','P','2019-06-07','-306','0.0','0.0','0.0','5000000.0','0.0','750000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-07-05','2018-07-05','NL0004','closedloan405502000110'),(5,1,'6000000.0','6000000.0','900000','900000.0','6900000','6900000.0','6900000.0','0.0','2019-06-02','P','2019-06-07','-5','0.0','0.0','0.0','6000000.0','0.0','900000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-05-02','2019-05-02','NL0005','closedloan505502000110'),(6,1,'6900000.0','6900000.0','1035000','1035000.0','7935000','7935000.0','7935000.0','0.0','2018-06-10','P','2019-06-07','-362','0.0','0.0','0.0','6900000.0','0.0','1035000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-05-10','2018-05-10','NL0006','closedloan605502000110'),(7,1,'7000000.0','7000000.0','2100000','1050000.0','9100000','9100000.0','8050000.0','0.0','2016-09-06','P','2019-06-09','-1006','0.0','0.0','0.0','7000000.0','0.0','2100000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2016-07-06','2016-07-06','NL0007','closedloan705502000110'),(8,1,'1.0E7','1.0E7','3000000','1500000.0','13000000','13000000','1.15E7','0.0','2018-08-09','P','2019-06-09','-304','0.0','0.0','0.0','10000000','0.0','3000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-06-09','2018-06-09','NL0012','closedloan805502000110'),(9,1,'7000000.0','7000000.0','2100000','1050000.0','9100000','9100000.0','8050000.0','0.0','2019-09-09','P','2019-06-09','92','0.0','0.0','0.0','7000000.0','0.0','2100000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-07-09','2019-07-09','NL0013','closedloan105502000210'),(10,1,'1.3E7','1.3E7','1950000.0','1950000.0','14950000','14950000','1.495E7','0.0','2019-08-09','P','2019-06-09','61','0.0','0.0','0.0','13000000','0.0','1950000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-07-09','2019-07-09','NL0014','closedloan905502000110'),(12,1,'9000000.0','9000000.0','2700000','1350000.0','11700000','11700000','1.035E7','0.0','2019-08-01','P','2019-06-10','52','0.0','0.0','0.0','9000000.0','0.0','2700000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-05-01','2019-05-01','NL0016','closedloan205502000210'),(13,1,'2.0E7','2.0E7','6000000','3000000.0','26000000','26000000','2.3E7','0.0','2018-07-06','P','2019-06-10','-339','0.0','0.0','0.0','20000000','0.0','6000000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-07-06','2018-07-06','NL0017','closedloan1005502000110'),(14,1,'1.0E7','1.0E7','1500000','1500000.0','11500000','11500000','1.15E7','0.0','2018-07-13','P','2019-06-10','-332','0.0','0.0','0.0','10000000','0.0','1500000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-07-13','2018-07-13','NL0018','closedloan1105502000110'),(15,1,'1.0E7','1.0E7','1500000','1500000.0','11500000','11500000','1.15E7','0.0','2018-03-06','P','2019-06-10','-461','0.0','0.0','0.0','10000000','0.0','1500000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-03-06','2018-03-06','NL0019','closedloan1205502000110'),(16,1,'1.0E7','1.0E7','1500000','1500000.0','11500000','11500000','1.15E7','0.0','2019-04-04','P','2019-06-12','-69','0.0','0.0','0.0','10000000','0.0','1500000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-04-04','2019-04-04','NL0020','closedloan305502000210'),(17,1,'1.15E7','1.15E7','1725000.0','1725000.0','13225000','13225000','1.3225E7','0.0','2019-07-12','P','2019-06-12','30','0.0','0.0','0.0','11500000','0.0','1725000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-07-12','2019-07-12','NL0021','closedloan1305502000110'),(18,1,'1.15E7','1.15E7','1725000.0','1725000.0','13225000','13225000','1.3225E7','0.0','2019-06-01','P','2019-06-12','-11','0.0','0.0','0.0','11500000','0.0','1725000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-06-01','2019-06-01','NL0022','closedloan405502000210'),(19,1,'1.3225E7','1.3225E7','1983750.0','1983750.0','15208750','15208750','1.520875E7','0.0','2019-07-01','P','2019-06-12','19','0.0','0.0','0.0','13225000','0.0','1983750.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-07-01','2019-07-01','NL0023','closedloan1405502000110'),(20,1,'1.0E7','1.0E7','1500000.0','1500000.0','11500000','11500000','1.15E7','0.0','2017-07-13','P','2019-06-12','-699','0.0','0.0','0.0','10000000','0.0','1500000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2017-07-13','2017-07-13','NL0024','closedloan1505502000110'),(21,1,'1.1E7','1.1E7','1650000','1650000.0','12650000','12650000','1.265E7','0.0','2019-04-05','P','2019-06-12','-68','0.0','0.0','0.0','11000000','0.0','1650000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-04-05','2019-04-05','NL0025','closedloan1605502000110'),(22,1,'1.1E7','1.1E7','1650000','1650000.0','12650000','12650000','1.265E7','0.0','2018-09-09','P','2019-06-13','-277','0.0','0.0','0.0','11000000','0.0','1650000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-05-09','2018-05-09','NL0026','closedloan1705502000110'),(23,1,'1.0E7','1.0E7','1500000','1500000.0','11500000','11500000','1.15E7','0.0','2019-08-02','P','2019-06-13','50','0.0','0.0','0.0','10000000','0.0','1500000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-02-02','2019-02-02','NL0027','closedloan1805502000110'),(24,1,'1.1E7','1.1E7','1650000','1650000.0','12650000','12650000','1.265E7','0.0','2019-04-05','P','2019-06-13','-69','0.0','0.0','0.0','11000000','0.0','1650000.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2019-04-05','2019-04-05','NL0028','closedloan505502000210'),(26,1,'2.0E7','2.0E7','39000000','3000000.0','59000000','59000000','2.3E7','0.0','2019-09-12','P','2019-06-13','91','0.0','0.0','0.0','20000000','0.0','39000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-07-12','2018-07-12','NL0030','closedloan1905502000110'),(27,1,'4.0E7','4.0E7','78000000','6000000.0','118000000','0.0','4.6E7','0.0','2018-07-12','NY','2019-06-13','NY','0.0','0.0','118000000','0.0','4.0E7','0.0','78000000','0.0','0.0','0.0','0.0','0.0','0.0','0.0','NYA','2018-07-12','2018-07-12','NL0031','newloan05502000110');
+/*!40000 ALTER TABLE `new_loan_appstoreamort` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `performing_loan_portfolio`
+--
+
+DROP TABLE IF EXISTS `performing_loan_portfolio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `performing_loan_portfolio` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `trn_date` date DEFAULT NULL,
+  `princimpal_amount` varchar(50) DEFAULT NULL,
+  `instalment_date` date DEFAULT NULL,
+  `account_name` varchar(50) DEFAULT NULL,
+  `account_number` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`trn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `performing_loan_portfolio`
+--
+
+LOCK TABLES `performing_loan_portfolio` WRITE;
+/*!40000 ALTER TABLE `performing_loan_portfolio` DISABLE KEYS */;
+/*!40000 ALTER TABLE `performing_loan_portfolio` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `provisionwriteoffthreshholds`
+--
+
+DROP TABLE IF EXISTS `provisionwriteoffthreshholds`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `provisionwriteoffthreshholds` (
+  `TrnId` int(11) NOT NULL AUTO_INCREMENT,
+  `TrnDate` date NOT NULL DEFAULT '1970-01-01',
+  `LowerThresh` int(11) DEFAULT '0',
+  `UpperThresh` int(11) DEFAULT '0',
+  `Percentage` int(11) DEFAULT '0',
+  `ProvisionWriteOff` varchar(45) DEFAULT '0',
+  `RecoverEndDate` date NOT NULL DEFAULT '1970-01-01',
+  `AddOne` varchar(45) DEFAULT '0',
+  `AddTwo` varchar(45) DEFAULT '0',
+  `AddThree` varchar(45) DEFAULT '0',
+  `AddFour` date NOT NULL DEFAULT '1970-01-01',
+  `AddFive` varchar(45) DEFAULT '0.0',
+  `AddSix` varchar(45) DEFAULT '0.0',
+  `AddSeven` varchar(45) DEFAULT '0.0',
+  `RecoverStatus1` varchar(45) DEFAULT 'NPF',
+  `RecoverStatus2` varchar(45) DEFAULT 'NPF',
+  `RecoverStatus3` varchar(45) DEFAULT 'NPF',
+  `OtherThree` varchar(45) DEFAULT 'NPF',
+  `OtherFour` varchar(45) DEFAULT 'NPF',
+  `OtherFive` varchar(45) DEFAULT 'NPF',
+  PRIMARY KEY (`TrnId`),
+  UNIQUE KEY `TrnId_UNIQUE` (`TrnId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `provisionwriteoffthreshholds`
+--
+
+LOCK TABLES `provisionwriteoffthreshholds` WRITE;
+/*!40000 ALTER TABLE `provisionwriteoffthreshholds` DISABLE KEYS */;
+/*!40000 ALTER TABLE `provisionwriteoffthreshholds` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `provisionwriteofftracker`
+--
+
+DROP TABLE IF EXISTS `provisionwriteofftracker`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `provisionwriteofftracker` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `trn_date` date DEFAULT '1970-01-01',
+  `account_name` varchar(100) DEFAULT 'Googo',
+  `account_number` varchar(100) DEFAULT '05502000010',
+  `range_provisioned` varchar(100) DEFAULT '0-180',
+  `percentage_provisioned` varchar(100) DEFAULT '10',
+  `days_in_arrears` varchar(100) DEFAULT '30',
+  `princimpal_in_arrears` varchar(100) DEFAULT '100000.0',
+  `amount_provisioned` varchar(100) DEFAULT '10000.0',
+  `otherOne` varchar(100) DEFAULT 'NA',
+  `otherTwo` varchar(100) DEFAULT 'NA',
+  `otherThree` varchar(100) DEFAULT 'NA',
+  PRIMARY KEY (`trn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `provisionwriteofftracker`
+--
+
+LOCK TABLES `provisionwriteofftracker` WRITE;
+/*!40000 ALTER TABLE `provisionwriteofftracker` DISABLE KEYS */;
+/*!40000 ALTER TABLE `provisionwriteofftracker` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sequencenumbers`
+--
+
+DROP TABLE IF EXISTS `sequencenumbers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sequencenumbers` (
+  `trn_id` int(11) NOT NULL AUTO_INCREMENT,
+  `groupNumber` int(11) DEFAULT '10000',
+  `trnSequencyNumber` int(11) DEFAULT '20000',
+  `batchNumber` int(11) DEFAULT '30000',
+  `budgetEstimateNumber` int(11) DEFAULT '40000',
+  `otherNumbers1` int(11) DEFAULT '50000',
+  `otherNumbers2` int(11) DEFAULT '60000',
+  `otherNumbers3` int(11) DEFAULT '70000',
+  `otherNumbers4` int(11) DEFAULT '80000',
+  PRIMARY KEY (`trn_id`),
+  UNIQUE KEY `trn_id` (`trn_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sequencenumbers`
+--
+
+LOCK TABLES `sequencenumbers` WRITE;
+/*!40000 ALTER TABLE `sequencenumbers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sequencenumbers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `temp_grossportfolio`
+--
+
+DROP TABLE IF EXISTS `temp_grossportfolio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `temp_grossportfolio` (
+  `id` int(11) DEFAULT NULL,
+  `temp_Borrower` varchar(200) DEFAULT NULL,
+  `temp_outStandingPrici` double DEFAULT NULL,
+  `temp_OutStandingInterst` double DEFAULT NULL,
+  `temp_OutStandingAccum` double DEFAULT NULL,
+  `temp_OutStandingPenalty` varchar(200) DEFAULT NULL,
+  `temp_OutStandingTotal` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `temp_grossportfolio`
+--
+
+LOCK TABLES `temp_grossportfolio` WRITE;
+/*!40000 ALTER TABLE `temp_grossportfolio` DISABLE KEYS */;
+INSERT INTO `temp_grossportfolio` VALUES (1,'BAZIRAKE AUGUSTINE',40000000,78000000,0,'0.0','118000000');
+/*!40000 ALTER TABLE `temp_grossportfolio` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-06-26  8:32:56
